@@ -8,7 +8,7 @@ Created by [Mark Silverberg](http://github.com/marks) and maintained by Tropo.
 * * *
 
 ## Quick Start
-_coming soon_
+You'll need the SMS Framework module and it's required modules (Token, Notifications, & Messaging Framework) installed. Create a Tropo account and application, and put the included Tropo code (`tropo_scripting_app.php`) in your Tropo account. Install the sms_tropo module and then configure your Drupal messaging and notifications to send SMS using the module.
 
 ## In-depth Directions
 1. Sign up for a Tropo.com account (FREE) and create a new "Tropo Scripting" application.
