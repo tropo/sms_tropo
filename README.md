@@ -23,8 +23,7 @@ _coming soon_
 			2. Change the fourth line of the text box to reflect your domain/path to Drupal. Keep the ?q=.. part intact.
 			3. Enter the following URL into the "What URL powers your app?" field: `http://DRUPAL_INSTALLATION/?tropo-engine=php&q=sms/tropo/scripting_app.php`
 			4. Click "Create Application"
-	* Now, you will want to "Add a new phone number" as well as configure your instant messaging networks if you want. Be sure to use a dedicated screen name and not your personal one. Tropo will use these to login and send/receive message to/from
-	* "Add a new token" (for both messaging and voice if you intend to let users choose voice calls for notifications instead of only messaging)
+	* Now, you will want to "Add a new phone number" (make sure to choose a US number - international Tropo numbers can't do SMS) as well as configure your instant messaging networks if you want. Be sure to use a dedicated screen name and not your personal one. Tropo will use these to login and send/receive message to/from
 	* "Update application" to save your changes.
 	
 2. Install and enable the required modules:  
