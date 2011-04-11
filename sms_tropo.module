@@ -240,7 +240,7 @@ function sms_tropo_scripting_app_callback() {
 
 function sms_tropo_incoming_callback() {
 	$received = file_get_contents("php://input");
-	$received = json_decode($received);
+	$received = json_decode($received, true);
 	watchdog('sms_tropo',"Received incoming communication from Tropo: <br /><br />" . print_r($received,TRUE));
   sms_incoming($received['callerID'], $received['initialText'], array('network' => $received['network'],'channel' => $received['channel']));
 }
