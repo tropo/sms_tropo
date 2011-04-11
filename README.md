@@ -44,8 +44,8 @@ You'll need the SMS Framework module and it's required modules (Token, Notificat
 		* SMS Blast - if you want to be able to message all your users at once
 
 3. Now install the sms_tropo plugin.
-	* Extract the sms_tropo tarball/zip file inside the /modules/smsframework/modules/ folder so that "sms_tropo"
-	* OR `cd` to `/modules/smsframework/modules/` and `git clone git://github.com/marks/sms_tropo.git`
+	* Extract the sms_tropo tarball/zip file inside the /modules/smsframework/modules/ folder so that "sms_tropo" appears as the folder /modules/smsframework/modules/sms_tropo/
+	* OR `cd` to `/modules/smsframework/modules/` and `git clone git://github.com/tropo/sms_tropo.git`
 	
 4. Follow the Drupal admin navigation or browse directly to ?q=/admin/smsframework/gateways 
 	* Fill out the configuration for the Tropo gateway with the details from your new Tropo Scripting application (created in step 1).
