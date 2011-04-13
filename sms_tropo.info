@@ -6,4 +6,5 @@ dependencies[] = sms
 dependencies[] = token
 dependencies[] = notifications
 dependencies[] = messaging
-core = 6.x
+core = 7.x
+files[] = sms_tropo.module
