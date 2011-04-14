@@ -51,10 +51,12 @@ You'll need the SMS Framework module and it's required modules (Token, Notificat
 	* Fill out the configuration for the Tropo gateway with the details from your new Tropo Scripting application (created in step 1).
 	* After saving, set Tropo as your default gateway.
 
-### Modifications to Drupal Modules to Support Tropo's Multiple Channels
-One of the great advantages of the Tropo platform is that it makes it easy to send IMs and initiate phone calls in addition to sending off SMS messages.  
+### _Optional_ Modifications to Drupal Modules to Support Tropo's Multiple Channels
+One of the great advantages of the Tropo platform is that it makes it easy to send IMs and initiate phone calls in addition to sending off SMS messages.
+
 _However_, there are a two code changes (required, list below) and several views changes (optional, listed further below) that you might want to make if you plan to take advantage of Tropo's non-SMS networks.
-To be clear: You can use Tropo as just a SMS provider and not need to make any of the following changes. 
+
+To be clear: You can use Tropo as just a SMS provider and not need to make any of the following changes.
 
 1. **Code changes to `/modules/messaging/messaging_sms/messaging_sms.module`**  
 	Find the following two functions and replace them with their new code:
