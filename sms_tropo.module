@@ -142,8 +142,19 @@ function sms_tropo_send($number, $message, $options) {
 	watchdog('sms_tropo','sms_tropo_send options:  <br />' . print_r($options,TRUE));
 	$network = $options['network'];
 	if (strtolower($network) == 'sms' || strtolower($network) == 'voice') {
-	  $number = preg_replace('/[^\d\+]/', '', $number);
-	  $number = preg_replace('/^[^\+]/', '', $number);
+	  //only re-format numbers that aren't SIP
+	  if (stripos('sip:', $number) != 0) {
+  	  // Capture the tel: protocol if present
+  	  $protocol = (stripos('tel:', $number) == 0) ? 'tel:' : '';
+  	  // Get the postdial string and capture for later
+  	  $postd = (stripos(';', $number) === TRUE) ? substr($number, stripos(';', $number)) : '';
+  	  // Strip anything that's not a digit or +
+  	  $number = preg_replace('/[^\d\+]/', '', $number);
+  	  // Strip any + that doesn't start the string
+  	  $number = preg_replace('/^[^\+]/', '', $number);
+  	  // Add the protocol and postdial back in
+  	  $number = $protocol . $number . $postd;	    
+	  }
 	}
   return sms_tropo_command('create', array('number' => $number, 'message' => $message, 'network' => $network));
 }
