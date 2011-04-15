@@ -141,6 +141,9 @@ function sms_tropo_other_form($account) {
 function sms_tropo_send($number, $message, $options) {
 	watchdog('sms_tropo','sms_tropo_send options:  <br />' . print_r($options,TRUE));
 	$network = $options['network'];
+	if (strtolower($network) == 'sms') {
+	  $number = preg_replace('/[^\d]/', '', $number);
+	}
   return sms_tropo_command('create', array('number' => $number, 'message' => $message, 'network' => $network));
 }
 
@@ -186,7 +189,7 @@ function sms_tropo_command($command = 'create', $data = array(), $config = NULL)
 			}
 			// Build query string
 			$query = '&token=' . $config['sms_tropo_' . $data['channel'] . '_token']; // use the appropriate (text or voice) token
-			$query .= '&to=' . $data['number'] . '&channel=' . $data['channel'] . '&message=' . $message;
+			$query .= '&to=' . drupal_urlencode($data['number']) . '&channel=' . $data['channel'] . '&message=' . $message;
       break;
   }
   // Run the command
