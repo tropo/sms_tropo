@@ -142,7 +142,8 @@ function sms_tropo_send($number, $message, $options) {
 	watchdog('sms_tropo','sms_tropo_send options:  <br />' . print_r($options,TRUE));
 	$network = $options['network'];
 	if (strtolower($network) == 'sms' || strtolower($network) == 'voice') {
-	  $number = preg_replace('/[^\d]/', '', $number);
+	  $number = preg_replace('/[^\d\+]/', '', $number);
+	  $number = preg_replace('/^[^\+]/', '', $number);
 	}
   return sms_tropo_command('create', array('number' => $number, 'message' => $message, 'network' => $network));
 }
